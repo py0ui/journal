@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L'Hebdo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #111;
+      color: white;
+      scroll-behavior: smooth;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 20px 50px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    header img {
+      height: 60px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: bold;
+    }
+    .hero {
+      background: url('https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/885570/ss_4d80aa13703f47589123aeef56b3170ccdb3fe9a.1920x1080.jpg?t=1753505321') no-repeat center center;
+      background-size: cover;
+      padding: 100px 50px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 20px;
+      color: #ddd;
+    }
+    section {
+      padding: 60px 50px;
+    }
+    h2.section-title {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    .card {
+      background: #2a2a2a;
+      border-radius: 12px;
+      overflow: hidden;
+      width: 300px;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+    .card:hover {
+      transform: scale(1.03);
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .card h3, .card p {
+      padding: 15px;
+    }
+    #extra-articles, #extra-pubs {
+      display: none;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+    }
+    .cta-button {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .cta-button button {
+      padding: 12px 25px;
+      font-size: 16px;
+      background-color: #555;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+      justify-content: center;
+    }
+    .about img {
+      width: 400px;
+      border-radius: 12px;
+    }
+    .about-text {
+      max-width: 500px;
+    }
+    footer {
+      background-color: #000;
+      text-align: center;
+      padding: 30px;
+      color: #888;
+    }
+	  .card {
+      background: #222;
+      padding: 20px;
+      border-radius: 12px;
+      width: 300px;
+      cursor: pointer;
+      transition: transform 0.2s;
+      position: relative;
+    }
+
+      .card:hover {
+      transform: scale(1.05);
+    }
+
+      .card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+     .card .tooltip {
+     position: absolute;
+     bottom: 10px;
+     left: 50%;
+     transform: translateX(-50%);
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #ccc;
+      padding: 5px 10px;
+      font-size: 13px;
+      border-radius: 6px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+    }
+
+     .card:hover .tooltip {
+      opacity: 1;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://media.discordapp.net/attachments/1400273613189550183/1400274393296535763/clean_logo_400x400_1.png?ex=688c0aa7&is=688ab927&hm=8bd92137d425be202028ec5f4c84b90b19c336adb71e3e4f21863a3cecc32a0b&format=webp&quality=lossless&width=600&height=600" alt="L'Hebdo Logo">
+    <nav>
+      <a href="#articles">Articles</a>
+      <a href="#pubs">Publicités</a>
+      <a href="#about">À propos</a>
+	  <a href="#tarifs">Tarifs</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Bienvenue sur L'Hebdo</h1>
+    <p>Journal créatif & services visuels à votre portée</p>
+  </section>
+
+  <section id="articles">
+    <h2 class="section-title">𝓛𝓪 𝓤𝓷𝓮</h2>
+    <div class="card-grid">
+ <!-- 🟦 article visibles au départ -->    
+	  <!-- DÉBUT ARTICLE -->
+	  <div class="card" onclick="window.location.href='https://discord.com/channels/1392613471232852220/1399850764700221672'">
+        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80" alt="Image Article 1">
+        <h3>Article 1</h3>
+       <p>Un article captivant sur l’actualité locale, à découvrir directement en un clic.</p>
+       <div class="tooltip">Clique pour lire</div>
+     </div>
+     <!-- FIN ARTICLE -->
+	    
+     <!-- DÉBUT ARTICLE -->
+	  <div class="card" onclick="window.location.href='https://discord.com/channels/1392613471232852220/1399850764700221672'">
+        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80" alt="Image Article 1">
+        <h3>Article 1</h3>
+       <p>Un article captivant sur l’actualité locale, à découvrir directement en un clic.</p>
+       <div class="tooltip">Clique pour lire</div>
+     </div>
+     <!-- FIN ARTICLE -->
+	 
+	 
+	   <!-- DÉBUT ARTICLE -->
+	  <div class="card" onclick="window.location.href='https://discord.com/channels/1392613471232852220/1399850764700221672'">
+        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80" alt="Image Article 1">
+        <h3>Article 1</h3>
+       <p>Un article captivant sur l’actualité locale, à découvrir directement en un clic.</p>
+       <div class="tooltip">Clique pour lire</div>
+     </div>
+     <!-- FIN ARTICLE -->
+	 
+ <!-- 🟪 article supplémentaires (cachées au début) -->
+	   <!-- DÉBUT ARTICLE CACHER -->
+	 <div id="extra-articles" class="card-grid">  
+	  <div class="card" onclick="window.location.href='https://discord.com/channels/1392613471232852220/1399850764700221672'">
+        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80" alt="Image Article 1">
+        <h3>Article 1</h3>
+       <p>Un article captivant sur l’actualité locale, à découvrir directement en un clic.</p>
+       <div class="tooltip">Clique pour lire</div>
+     </div>
+	</div>
+     <!-- FIN ARTICLE CACHER -->
+	
+	 <!-- 🟨 Bouton placé après TOUT -->
+      <div class="cta-button">
+      <button onclick="document.getElementById('extra-articles').style.display='flex'; this.style.display='none';">Voir plus d'articles</button>
+    </div>
+  </section>
+
+
+<section id="pubs">
+  <h2 class="section-title">𝓟𝓾𝓫𝓵𝓲𝓬𝓲𝓽é𝓼 𝓹𝓸𝓾𝓻 𝓮𝓷𝓽𝓻𝓮𝓹𝓻𝓲𝓼𝓮𝓼</h2>
+
+  <!-- 🟦 Pubs visibles au départ -->
+  <div class="card-grid">
+    <!-- DÉBUT PUB -->
+    <div class="card" onclick="window.location.href='https://discord.com/channels/1392613471232852220/1399850764700221672'">
+      <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80" alt="Image Pub 1">
+      <h3>Article 1</h3>
+      <p>Un article captivant sur l’actualité locale, à découvrir directement en un clic.</p>
+      <div class="tooltip">Clique pour lire</div>
+    </div>
+    <!-- FIN PUB -->
+
+    <!-- DÉBUT PUB -->
+    <div class="card" onclick="window.location.href='https://discord.com/channels/1392613471232852220/1399850764700221672'">
+      <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80" alt="Image Pub 2">
+      <h3>Article 1</h3>
+      <p>Un article captivant sur l’actualité locale, à découvrir directement en un clic.</p>
+      <div class="tooltip">Clique pour lire</div>
+    </div>
+    <!-- FIN PUB -->
+
+    <!-- DÉBUT PUB -->
+    <div class="card" onclick="window.location.href='https://discord.com/channels/1392613471232852220/1399850764700221672'">
+      <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80" alt="Image Pub 3">
+      <h3>Article 1</h3>
+      <p>Un article captivant sur l’actualité locale, à découvrir directement en un clic.</p>
+      <div class="tooltip">Clique pour lire</div>
+    </div>
+    <!-- FIN PUB -->
+  </div>
+
+  <!-- 🟪 Pubs supplémentaires (cachées au début) -->
+  <div id="extra-pubs" class="card-grid">
+    <div class="card" onclick="window.location.href='https://discord.com/channels/1392613471232852220/1399850764700221672'">
+      <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80" alt="Image Pub Supplémentaire">
+      <h3>Article 1</h3>
+      <p>Un article captivant sur l’actualité locale, à découvrir directement en un clic.</p>
+      <div class="tooltip">Clique pour lire</div>
+    </div>
+  </div>
+
+  <!-- 🟨 Bouton placé après TOUT -->
+  <div class="cta-button">
+    <button onclick="document.getElementById('extra-pubs').style.display='flex'; this.style.display='none';">
+      Voir plus de pubs
+    </button>
+  </div>
+</section>
+
+<section id="tarifs">
+  <h2 class="section-title">𝓣𝓪𝓻𝓲𝓯𝓼</h2>
+  <div class="card-grid">
+
+    <!-- Carte 1 -->
+    <div class="card" onclick="window.location.href='https://discord.com/channels/1392613471232852220/1392618229033336914'">
+      <h3>Article personnalisé</h3>
+      <p>Rédaction sur mesure, format court à moyen.</p>
+      <p><strong>10€</strong></p>
+      <div class="tooltip">Voir un exemple d'article</div>
+    </div>
+
+    <!-- Carte 2 -->
+    <div class="card" onclick="window.location.href='https://discord.com/channels/1392613471232852220/1392618229033336914'">
+      <h3>Flyer / Affiche</h3>
+      <p>Design professionnel adapté à votre image.</p>
+      <p><strong>15€</strong></p>
+      <div class="tooltip">Voir un exemple de flyer</div>
+    </div>
+
+    <!-- Carte 3 -->
+    <div class="card" onclick="window.location.href='https://discord.com/channels/1392613471232852220/1392618229033336914'">
+      <h3>Publicité entreprise</h3>
+      <p>Visuel + placement dans notre hebdo (1 semaine).</p>
+      <p><strong>20€</strong></p>
+      <div class="tooltip">Voir un exemple de publicité</div>
+    </div>
+
+    <!-- Carte 4 -->
+    <div class="card" onclick="window.location.href='https://discord.com/channels/1392613471232852220/1392618229033336914'">
+      <h3>Pack Complet</h3>
+      <p>Article + Flyer + Pub — visibilité maximale.</p>
+      <p><strong>35€</strong></p>
+      <div class="tooltip">Voir un exemple de pack</div>
+    </div>
+
+  </div>
+
+  <!-- Bouton Commander -->
+  <div class="cta-button">
+    <button onclick="window.location.href='https://discord.com/channels/1392613471232852220/1392618229033336914'">
+      Commander
+    </button>
+  </div>
+</section>
+
+
+
+  <section id="about">
+    <h2 class="section-title">À 𝓹𝓻𝓸𝓹𝓸𝓼</h2>
+    <div class="about">
+      <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80" alt="about">
+      <div class="about-text">
+        <p>L'Hebdo est un journal créatif qui mêle actualité, analyse, design et services rédactionnels. Nous aidons entreprises et individus à communiquer clairement et efficacement à travers des articles, flyers, pubs et plus encore.
+		<a href=" https://discord.gg/BfRHXXPpjw">nous  contacter</a>
+</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 L'Hebdo — Tous droits réservés.
+  </footer>
+</body>
+</html>
